@@ -1,5 +1,21 @@
 extends layout
 
+block stylesheets
+  link(rel='stylesheet', href='/stylesheets/home.css')
+
+block topmenu
+  ul.nav.navbar-nav
+    li: a#music(href='#') Music
+    li: a#art(href='#') Art
+    li: a#videos(href='#') Videos
+    li: a#culture(href='#') Culture
+
 block content
-  h1= title
-  p Welcome to #{title}
+  .container
+  
+block sidebar
+  ol
+    li: a(href='#')
+    
+block scripts
+  script(src='/javascript/home.js')

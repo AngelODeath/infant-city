@@ -1,4 +1,5 @@
 var express = require('express');
+var session = require('express-session');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -17,6 +18,11 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
+app.use(session({
+    secret: 'ssshhhhh',
+    saveUninitialized: true,
+    resave: true
+}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -56,5 +62,13 @@ app.use(function(err, req, res, next) {
     });
 });
 
+app.get("/*", function(req, res, next){
+    console.log('test');
+    if(typeof req.cookies['connect.sid'] !== 'undefined'){
+        console.log(req.cookies['connect.sid']);
+    }
+
+    next(); // call the next middleware
+});
 
 module.exports = app;

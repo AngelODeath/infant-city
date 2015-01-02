@@ -1,7 +1,46 @@
 doctype html
-html
+html(lang="en")
   head
     title= title
+    link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/normalize.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
+    block stylesheets
   body
-    block content
+    header
+      .navbar.navbar-inverse.navbar-fixed-top
+          .navbar-header
+            a.navbar-brand#home(href='#')= title
+            button.navbar-toggle(type='button' data-toggle='collapse' data-target='.navbar-collapse')
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+          .topmenu.navbar-collapse.collapse         
+            block topmenu
+            .user_account
+              
+    .clear     
+    .content
+      if breadcrumb && breadcrumb !== "/"
+        - console.log(breadcrumb);
+        - var breadcrumb_items = breadcrumb.split('/'), item_length = breadcrumb_items.length;
+        - console.log({breadcrumb: breadcrumb, breadcrumb_items: breadcrumb_items, item_length: item_length});
+      
+        ol.breadcrumb
+          for item in breadcrumb_items
+            li: a(href='#')= item
+          else
+            li /
+        
+      .main-content.panel.panel-default
+        block content
+      .sidebar.panel.panel-default
+          block sidebar
+    .clear     
+    footer Running on node with Express and Jade
+    
+  script(src='/javascript/jquery-2.1.3.min.js')
+  script(src='/javascript/bootstrap.min.js')
+  block scripts

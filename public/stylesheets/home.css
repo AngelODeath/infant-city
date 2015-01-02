@@ -1,0 +1,14 @@
+/*
+    Document   : public/stylesheets/home．css
+    Created on : 2015-01-02 08:18 PM
+    Author     : AngelODeath
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+.container {
+    border: 1px solid red;
+    height: 100%;
+    width: 100%;
+}
