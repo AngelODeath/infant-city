@@ -7,11 +7,18 @@
 
 $(function() {
     var homebutton = $("a#home");
+    var musicbutton = $("a#music");
+    
+    var content_region = $('.content');
+    var sidebar = $('.sidebar');
     
     homebutton.click(function() {
-        console.log('Sending ajax request to /users');
-        $.ajax({
-            url: 'users',
+//         window.location = '/';
+    });
+    
+    musicbutton.click(function() {
+         $.ajax({
+            url: '/content/page=music',
             type: 'GET',
             dataType: 'text/html',
             success: function(result) {
@@ -19,5 +26,4 @@ $(function() {
             }
         });
     });
-    
 })
