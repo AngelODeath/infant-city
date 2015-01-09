@@ -8,7 +8,7 @@
 var express = require('express');
 var router = express.Router();
  
-router.get('/search/:query?', function(req, res) {
+router.get('/:query?', function(req, res) {
   var query = req.params.query;
   console.log(query);
   res.send('respond with a resource');
