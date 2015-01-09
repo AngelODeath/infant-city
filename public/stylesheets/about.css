@@ -1,0 +1,51 @@
+/*
+    Document   : public/stylesheets/about．css
+    Created on : 2015-01-07 09:07 PM
+    Author     : AngelODeath
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+
+root {
+    display: block;
+}
+
+.chap {
+    padding: 2%;
+}
+
+.sub {
+    margin-top: 50px;
+    font-size: 10px;
+    padding: 1%;
+}
+
+.ver {
+    display: block;
+    padding: 1px;
+    width: 80%;
+}
+.ver_small {
+    width: 50%;
+}
+.emph {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.ital {
+    font-style: italic;
+}
+
+.clear {
+    clear: both;
+    height: 10px;
+    display: block;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    overflow:auto;
+}
